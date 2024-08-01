@@ -1,6 +1,5 @@
-##Java) Examination task. Site Autobase
-
-##Java) Экзаменационное задание. Сайт Автобаза
+## Java) Examination task. Site Autobase
+## Java) Экзаменационное задание. Сайт Автобаза
 
 
 ##Задача на взаимодействие между классами.
