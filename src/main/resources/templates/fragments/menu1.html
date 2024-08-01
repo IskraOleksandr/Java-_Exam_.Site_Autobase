@@ -1,0 +1,18 @@
+<div xmlns:th="http://www.thymeleaf.org"
+     style="border: 1px solid #fff0;padding:5px;margin-bottom:20px;">
+    <div th:fragment="fragmentContent1" th:if="${roles != null}">
+        <a th:if="${roles.contains('ROLE_ADMIN')}" th:href="@{/createDriver}">Добавить водителя </a>
+        <a th:if="${roles.contains('ROLE_ADMIN')}">&nbsp; | &nbsp;</a>
+        <a th:if="${roles.contains('ROLE_ADMIN')}" th:href="@{/updateDriver}">Изменить уровень опыта водителя </a>
+        <a th:if="${roles.contains('ROLE_ADMIN')}">&nbsp; | &nbsp;</a>
+        <a th:if="${roles.contains('ROLE_ADMIN')}" th:href="@{/destinations/get}">Все пункты назначения</a>
+        <a th:if="${roles.contains('ROLE_ADMIN')}">&nbsp; | &nbsp;</a>
+        <a th:if="${roles.contains('ROLE_ADMIN')}" th:href="@{/orders/get}">Полученные заявки</a>
+        <a th:if="${roles.contains('ROLE_ADMIN')}">&nbsp; | &nbsp;</a>
+        <a th:if="${roles.contains('ROLE_ADMIN')}" th:href="@{/routes/get}">Распределенные заявки</a>
+        <a th:if="${roles.contains('ROLE_ADMIN')}">&nbsp; | &nbsp;</a>
+        <a th:if="${roles.contains('ROLE_ADMIN')}" th:href="@{/truckrepair/get}">Машины</a>
+        <div xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+             style="border: 1px solid #fff0;padding:1px;margin-bottom:20px;"></div>
+    </div>
+</div>

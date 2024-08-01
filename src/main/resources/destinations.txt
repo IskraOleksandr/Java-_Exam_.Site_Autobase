@@ -1,0 +1,8 @@
+Odessa:1500
+Vinnitsa:1200
+Lviv:1700
+Kyiv:500
+Poltava:900
+Dnipro:1300
+Chernigiv:700
+Cherkasy:800

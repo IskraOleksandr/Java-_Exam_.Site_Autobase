@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:fragment="content" th:with="roles=${roles}">
+<th:block th:include="/fragments/menu :: fragmentContent"></th:block>
+</div>
+    <div th:fragment="content" th:with="roles=${roles}">
+<th:block th:include="/fragments/menu1 :: fragmentContent1"> </th:block>
+</div>
+
+<h2 th:utext="${salaryDTO.getName()}">...</h2>
+
+<table border = "1">
+    <tr>
+        <th>День</th>
+        <th>Груз</th>
+        <th>Пункт назначения </th>
+
+        <th>Сумма</th>
+    </tr>
+    <tr th:each = "sal : ${salaryDTO.getSalary()}">
+        <td th:utext="${sal.getRouteId().getDate()}">...</td>
+        <td th:utext="${sal.getRouteId().getOrderId().getCargoId().getName()}">...</td>
+        <td th:utext="${sal.getRouteId().getOrderId().getDestinationId().getName()}">...</td>
+        <td th:utext="${sal.getSumma()}">...</td>
+    </tr>
+    <tr>
+        <td >Итого</td>
+        <td ></td>
+        <td></td>
+        <td th:utext="${salaryDTO.getAllSumma()}">...</td>
+    </tr>
+</table>
+</table>
+
+</body>
+</html>

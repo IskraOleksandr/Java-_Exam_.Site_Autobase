@@ -1,0 +1,22 @@
+<div xmlns:th="http://www.thymeleaf.org"
+     style="border: 1px solid #fff0;padding:5px;margin-bottom:20px;">
+  <div th:fragment="fragmentContent" th:if="${roles != null}">
+  <a th:href="@{/}">Home</a>
+  &nbsp; | &nbsp;
+  <a th:if="${principal != null}" th:href="@{/userInfo}">Info </a>
+  <a th:if="${principal != null}" > &nbsp; | &nbsp; </a>
+
+  <a th:if="${roles.contains('ROLE_ADMIN')  || roles.contains('ROLE_DIRECTOR') }" th:href="@{/drivers/get}">Список водителей </a>
+  <a th:if="${roles.contains('ROLE_ADMIN')|| roles.contains('ROLE_DIRECTOR')}" > &nbsp; | &nbsp; </a>
+  <a th:if="${roles.contains('ROLE_ADMIN')  || roles.contains('ROLE_DIRECTOR') }" th:href="@{/trucks/get}">Список машин </a>
+  <a th:if="${roles.contains('ROLE_ADMIN')|| roles.contains('ROLE_DIRECTOR')}" > &nbsp; | &nbsp; </a>
+  <a th:if="${roles.contains('ROLE_ADMIN') || roles.contains('ROLE_DIRECTOR')  }" th:href="@{/statistic}">Статистика </a>
+  <a th:if="${roles.contains('ROLE_ADMIN') || roles.contains('ROLE_DIRECTOR')}" > &nbsp; | &nbsp; </a>
+
+  <a th:if="${ roles.contains('ROLE_DIRECTOR') || roles.contains('ROLE_ADMIN')   }" th:href="@{/salary/get}">Зарплатная ведомость </a>
+  <a th:if="${ roles.contains('ROLE_DIRECTOR') || roles.contains('ROLE_ADMIN')}" > &nbsp; | &nbsp; </a>
+  <a th:if="${roles.contains('ROLE_DRIVER') || roles.contains('ROLE_DIRECTOR') || roles.contains('ROLE_ADMIN')  }" th:href="@{/salaryDriver}">Зарплата водителя</a>
+  <a th:if="${roles.contains('ROLE_DRIVER') || roles.contains('ROLE_DIRECTOR') || roles.contains('ROLE_ADMIN') }" > &nbsp; | &nbsp; </a>
+
+  <a th:if="${roles.contains('ROLE_DRIVER') || roles.contains('ROLE_DIRECTOR') || roles.contains('ROLE_ADMIN')}" th:href="@{/logout}">Выйти</a>
+</div></div>

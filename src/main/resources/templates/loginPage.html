@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login</title>
+</head>
+<body>
+<div th:fragment="content" th:with="roles=${roles}">
+    <!-- Include _menu.html -->
+    <th:block th:replace="/fragments/menu :: fragmentContent"></th:block>
+</div>
+<h1>Login</h1>
+
+<!-- /login?error=true -->
+<div th:if="${param.error}"
+     style="color:red;margin:10px 0px;">
+    Login Failed!!!<br/>
+
+</div>
+
+<h3>Enter user name and password:</h3>
+<form name='login' th:action="@{/j_spring_security_check}" method='POST'>
+    <table>
+        <tr>
+            <td>User:</td>
+            <td><input type='text' name='username' value=''></td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td><input type='password' name='password'/></td>
+        </tr>
+        <tr>
+            <td><input name="submit" type="submit" value="submit"/></td>
+        </tr>
+    </table>
+</form>
+
+<br>
+Username/passwords examples:
+<ul>
+    <li>admin/123</li>
+    <li>director/123</li>
+    <li>driver/123</li>
+</ul>
+
+</body>
+
+</html>

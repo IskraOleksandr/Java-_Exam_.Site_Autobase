@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title> Изменить уровень опыта водителя </title>
+</head>
+<body>
+<div th:fragment="content" th:with="roles=${roles}">
+    <th:block th:include="/fragments/menu :: fragmentContent"></th:block>
+</div>
+
+<div th:fragment="content" th:with="roles=${roles}">
+    <th:block th:include="/fragments/menu1 :: fragmentContent1"></th:block>
+</div>
+
+<h3> Изменить уровень опыта водителя :</h3>
+<form name='updateDriver' th:action="@{/drivers/update}" method='POST'>
+    <table>
+        <tr>
+            <select name="driverId">
+                <option th:each="driver : ${drivers}"
+                        th:value="${driver.id}"
+                        th:text="${driver.fullName}">
+                    ...
+                </option>
+            </select>
+        </tr>
+
+        <tr>
+            <td>Уровень опыта:</td>
+            <td><input type='text' name='newExpirience' value=''></td>
+        </tr>
+
+        <tr>
+            <td><input name="submit" type="submit" value="Подтвердить"/></td>
+        </tr>
+    </table>
+</form>
+
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title> UpdateCourse </title>
+</head>
+<body>
+<div th:fragment="content" th:with="roles=${roles}">
+    <th:block th:include="/fragments/menu :: fragmentContent"></th:block>
+</div>
+<div th:fragment="content" th:with="roles=${roles}">
+    <th:block th:include="/fragments/menu1 :: fragmentContent1"></th:block>
+</div>
+
+<h2>Выборка зарплаты конкретного водителя</h2>
+
+<h3>Выберите водителя из списка:</h3>
+<form name='salaryDriver' th:action="@{/salary/driver}" method='POST'>
+    <table>
+        <tr>
+            <select name="driverId">
+                <option th:each="driver : ${drivers}"
+                        th:value="${driver.Id}"
+                        th:text="${driver.fullName}">
+                    ...
+                </option>
+            </select>
+        </tr>
+
+        <tr>
+            <td><input name="submit" type="submit" value="Выбрать"/></td>
+        </tr>
+    </table>
+</form>
+
+</body>
+
+</html>

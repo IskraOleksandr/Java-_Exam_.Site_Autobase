@@ -1,0 +1,15 @@
+spring:
+    datasource:
+        url: jdbc:postgresql://localhost:5440/AutoBase
+        username: IskraOl
+        password: admin
+        driverClassName: org.postgresql.Driver
+
+    flyway:
+        enabled: true
+        user: IskraOl
+        password: admin
+        schemas: public
+        url: jdbc:postgresql://localhost:5440/AutoBase
+
+

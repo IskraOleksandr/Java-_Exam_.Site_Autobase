@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:utext="${title}"></title>
+</head>
+<body>
+<div th:fragment="content" th:with="roles=${roles}">
+    <th:block th:include="/fragments/menu :: fragmentContent"></th:block>
+</div>
+<div th:fragment="content" th:with="roles=${roles}">
+    <th:block th:include="/fragments/menu1 :: fragmentContent1"></th:block>
+</div>
+
+
+<h2>Страница админа</h2>
+<h3>Welcome :
+    <span th:utext="${#request.userPrincipal.name}"></span>
+</h3>
+<b>Добро пожаловать, Админ!</b>
+
+<br/><br/>
+
+<div th:if="${userInfo != null}" th:utext="${userInfo}"></div>
+
+</body>
+
+</html>

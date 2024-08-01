@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title> UpdateCourse </title>
+</head>
+<body>
+<div th:fragment="content" th:with="roles=${roles}">
+    <th:block th:include="/fragments/menu :: fragmentContent"></th:block>
+</div>
+<div th:fragment="content" th:with="roles=${roles}">
+    <th:block th:include="/fragments/menu1 :: fragmentContent1"></th:block>
+</div>
+
+<h3>Водитель с наибольшей зарплатой:</h3>
+<table border="1">
+    <tr>
+        <th>Имя водителя</th>
+        <th> Общая зарплата</th>
+    </tr>
+    <tr>
+        <td th:utext="${driver.getName()}">...</td>
+        <td th:utext="${driver.getAllSumma}">...</td>
+    </tr>
+</table>
+<hr/>
+<h3>Наиболее частый пункт доставки:</h3>
+
+<h1 th:utext="${destination}">...</h1>
+<hr/>
+
+<h3>Наиболее часто перевозимый груз</h3>
+<h1 th:utext="${cargo}"></h1>
+<hr/>
+
+<h3>Наименьший вес перевезенного груза</h3>
+<h1 th:utext="${mincargo}"></h1>
+<hr/>
+<h3>Все грузы перевезенные в Vinnitsa</h3>
+<table border="1">
+    <tr>
+        <th>Название груза</th>
+        <th>Вес</th>
+    </tr>
+    <tr th:each="order : ${orders}">
+        <td th:utext="${order.getCargoId().getName()}">...</td>
+        <td th:utext="${order.getWeight()}">...</td>
+
+    </tr>
+</table>
+
+</body>
+
+</html>

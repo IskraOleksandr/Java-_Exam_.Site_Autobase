@@ -1,0 +1,12 @@
+Ivanov:45:4
+Petrov:43:4
+Sidorov:20:1
+Pavlov:25:1
+Sergeev:27:2
+Podgorniy:19:0
+Zagudaev:28:3
+Miroshnichenko:30:2
+Naiden:28:3
+Sviridov:42:4
+Panteleev:18:0
+Grigoriev:25:2
