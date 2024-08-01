@@ -1,5 +1,6 @@
-** Java) Examination task. Site Autobase (bold)**
-** Java) Экзаменационное задание. Сайт Автобаза (bold)**
+**Java) Examination task. Site Autobase (bold)**
+
+**Java) Экзаменационное задание. Сайт Автобаза (bold)**
 
 
 #### Задача на взаимодействие между классами.
